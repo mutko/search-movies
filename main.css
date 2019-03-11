@@ -5,6 +5,7 @@
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  list-style: none;
 }
 
 .grid {
@@ -28,3 +29,10 @@
   grid-column: 1 / span 3;
   grid-row: 3;
 }
+p {
+  color:blue
+}
+input {
+ background-color:aliceblue
+}
+
