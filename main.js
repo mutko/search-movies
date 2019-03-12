@@ -41,6 +41,6 @@ fetch(url)
     })
 
 searchField.addEventListener('input', function() {
-    searchResults = allMovies.filter(film => film.naziv.includes(searchField.value))
+    searchResults = allMovies.filter( film => film.naziv.includes(searchField.value) )
     showMovies(searchResults)
 })
