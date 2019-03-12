@@ -5,6 +5,11 @@ let searchField =id('search');
 let spaceForMovies =id('filmovi');
 let loader = id('loader');
 
+const yearUp = id('sortYearUp');
+const yearDown = id('sortYearDown');
+const titleUp = id('sortTitleUp');
+const titleDown = id('sortTitleDown');
+
 let godina;
 let naziv;
 let slika;
@@ -39,12 +44,60 @@ fetch(url)
     .then( response => response.json() )
     .then( response => {
         allMovies = response;
-        showMovies(response)
+        showMovies(response);
     })
     
+
+function sortYearUp(a, b) {
+    if (a.godina < b.godina)
+        return -1;
+    if (a.godina > b.godina)
+        return 1;
+    return 0;
+}
+function sortYearDown(b, a) {
+    if (a.godina < b.godina)
+        return -1;
+    if (a.godina > b.godina)
+        return 1;
+    return 0;
+}
+function sortTitleUp(a, b) {
+    if (a.naziv < b.naziv)
+      return -1;
+    if (a.naziv > b.naziv)
+      return 1;
+    return 0;
+}
+  
+function sortTitleDown(b, a) {
+    if (a.naziv < b.naziv)
+      return -1;
+    if (a.naziv > b.naziv)
+      return 1;
+    return 0;
+}
+
+
+
 searchField.addEventListener('input', function() {
-    let searchResults = allMovies.filter( film => film.naziv.toLowerCase().includes(searchField.value.toLowerCase() ) )
+    let searchResults = allMovies.filter( film => film.naziv.toLowerCase().includes(searchField.value.toLowerCase()) )
     showMovies(searchResults)
 })
 
-let forSort = document.getElementById('filmovi');
+yearUp.addEventListener("click", function() {
+    allMovies.sort(sortYearUp)
+    showMovies(allMovies)
+})
+yearDown.addEventListener("click", function() {
+    allMovies.sort(sortYearDown)
+    showMovies(allMovies)
+})
+titleUp.addEventListener("click", function() {
+    allMovies.sort(sortTitleUp)
+    showMovies(allMovies)
+})
+titleDown.addEventListener("click", function() {
+    allMovies.sort(sortTitleDown)
+    showMovies(allMovies)
+})
