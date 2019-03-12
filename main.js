@@ -8,7 +8,6 @@ let naziv;
 let slika;
 
 let allMovies = [];
-let searchResults = [];
 
 function showMovies(podatak) {
     
@@ -37,11 +36,11 @@ function showMovies(podatak) {
 fetch(url)
     .then( response => response.json() )
     .then( response => {
-        allMovies = searchResults = response;
+        allMovies = response;
         showMovies(response)
     })
     
 searchField.addEventListener('input', function() {
-    searchResults = allMovies.filter( film => film.naziv.toLowerCase().includes(searchField.value.toLowerCase() ) )
+    let searchResults = allMovies.filter( film => film.naziv.toLowerCase().includes(searchField.value.toLowerCase() ) )
     showMovies(searchResults)
 })
