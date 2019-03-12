@@ -30,6 +30,7 @@ function showMovies(podatak) {
             </div>
         `;
 
+        naziv = naziv.toLowerCase();
     }
     spaceForMovies.innerHTML = patternForMovies;
 }
@@ -39,8 +40,8 @@ fetch(url)
         allMovies = searchResults = response;
         showMovies(response)
     })
-
+    
 searchField.addEventListener('input', function() {
-    searchResults = allMovies.filter( film => film.naziv.includes(searchField.value) )
+    searchResults = allMovies.filter( film => film.naziv.toLowerCase().includes(searchField.value.toLowerCase() ) )
     showMovies(searchResults)
 })
