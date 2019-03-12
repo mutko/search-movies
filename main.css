@@ -1,57 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
 .grid-container {
-  display: grid;
-  grid-gap: 10px;
   background-color: #2196F3;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
 }
-
-.grid {
+/* .grid {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px;
   font-size: 30px;
-}
-
-.grid1 {
-  grid-column: 1 / span 2;
-  grid-row: 1;
-}
-
-.grid2 {
-  grid-column: 3;
-  grid-row: 1 / span 2;
-}
-
-.grid3 {
-  grid-column: 1 / span 3;
-  grid-row: 3;
-}
-p{
-  color: rgb(25, 27, 27);
-  font-size: 20px;
-
-}
+} */
 input {
  background-color:aliceblue
 }
-/* .movie {
-  display: flex;
-flex-wrap: wrap
-} */
+
 main {
   grid-area: m;
   padding: 10px;
   background-image: url("images/filmslika2.jpg") ;
   background-size: cover;
-  /* height: 100%; */
-  background-attachment: fixed;
-  
+  background-attachment: fixed;  
 }
 header {
   background-color:burlywood;
+  grid-area: h;
 }
 footer {
   background-color: #2196F3;
@@ -59,38 +37,45 @@ footer {
   padding: 10px;
   text-align: center;
 }
-
-header {
-  grid-area: h;
-}
-
 footer {
   grid-area: f;
 }
-
-/* .container {
+.container {
   display: grid;
   min-height: 100vh;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 130px auto 50px;
+  grid-template-rows: 150px auto 50px;
   grid-template-areas: 
   "h h h h h h h h h h h h"
   "m m m m m m m m m m m m"
   "f f f f f f f f f f f f"
-} */
+}
 h1{
   color: rgb(158, 146, 115);
   text-align: center;
+  padding: 10px;
 }
 button {
   border-radius: 20px;
-  border: solid 1px goldenrod
+  border: solid 1px goldenrod;
+  padding: 5px;
 }
-h2 {
-  background-color: gold;
-  width: 180px;
+button:hover {
   border-radius: 20px;
+  border: solid 1px black;
+  padding: 5px;
+  color: goldenrod;
 }
-header p {
+header h2 {
  text-align: center;
+ padding: 10px;
+ color: rgb(158, 146, 115);
+}
+#filmovi {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+h3{
+  width: 100px;
 }
