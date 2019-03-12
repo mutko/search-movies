@@ -12,7 +12,7 @@ let slika;
 let allMovies = [];
 
 function showMovies(podatak) {
-    
+   
     let patternForMovies = ``;
 
     for (let i = 0; i < podatak.length; i++) {         
@@ -47,5 +47,4 @@ searchField.addEventListener('input', function() {
     showMovies(searchResults)
 })
 
-
-let forSort = document.getElementById('filmovi').childNodes;
+let forSort = document.getElementById('filmovi');
