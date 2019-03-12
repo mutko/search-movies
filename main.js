@@ -1,7 +1,9 @@
+const id = select => document.getElementById(select);
 const url = 'https://baza-filmova.herokuapp.com/filmovi/';
 
-let searchField = document.getElementById('search');
-let spaceForMovies = document.getElementById('filmovi');
+let searchField =id('search');
+let spaceForMovies =id('filmovi');
+let loader = id('loader');
 
 let godina;
 let naziv;
@@ -14,6 +16,8 @@ function showMovies(podatak) {
     let patternForMovies = ``;
 
     for (let i = 0; i < podatak.length; i++) {         
+        
+        loader.style.display = 'none';
 
         godina = podatak[i].godina;
         naziv = podatak[i].naziv;
@@ -22,10 +26,8 @@ function showMovies(podatak) {
         patternForMovies += `
             <div class="movie">
                 <img src=${slika} alt="Movie poster" class="movie-img">
-                <div class="movie-body">
-                    <h3>${naziv}</h3>
-                    <p>${godina}</p>
-                </div>
+                <h3>${naziv}</h3>
+                <p>${godina}</p>
             </div>
         `;
 
@@ -44,3 +46,6 @@ searchField.addEventListener('input', function() {
     let searchResults = allMovies.filter( film => film.naziv.toLowerCase().includes(searchField.value.toLowerCase() ) )
     showMovies(searchResults)
 })
+
+
+let forSort = document.getElementById('filmovi').childNodes;
