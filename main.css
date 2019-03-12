@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: content-box;
 }
+body{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .grid-container {
   background-color: #2196F3;
   padding: 10px;
@@ -81,6 +84,7 @@ h3{
 }
 h2 {
   padding: 10px;
+  color: #2196F3;
 }
 label, input {
   display: block;
