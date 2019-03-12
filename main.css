@@ -82,3 +82,25 @@ h3{
 h2 {
   padding: 10px;
 }
+label, input {
+  display: block;
+  text-align: center;
+}
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  width: 300px;
+}
+.dodaj_film {
+
+ display: flex;
+
+}
+.unos {
+ margin-left: 250px;
+ margin-right: 350px;
+}
+.slika{
+  padding: 30px;
+}
