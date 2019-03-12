@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Search movies</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Search movies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+
 </head>
+
 <body>
-    <h1>Baza filmova</h1>
-    <p>Dobro dosli u najvecu bazu filmova</p>
-    <ul class="grid-container">
-        <li><a href="index.html">Naslovna</a></li>
-        <li><a href="pretraga.html">Pretraga</a></li>
-        <li><a href="#">Dodaj film</a></li>   
-
-       
-    </ul>
+  <header>
+  <h1>Baza filmova</h1>
+  <p>Dobro došli u najveću bazu filmova!</p>
+</header>
+  <ul class="grid-container">
+    <li><a href="index.html"><button>Naslovna</button></a></li><li><a href="pretraga.html"><button>Pretraga</button</a></li><li><a href="#"><button>Dodaj film</button></a></li>
 
 
-<section>
+  </ul>
 
-  <h1>
-    Pretraga filmova
-  </h1>
+  <main>
+    <section>
 
-  PRETRAZI:
-  <input type="text" placeholder="Pretrazi film"> <br><br>
-  <p>POREDJAJ PO GODINI: <button>&#8593;</button> <button>&#8595;</button> </p><br>
-  <p>POREDJAJ PO NASLOVU: <button>&#8593;</button> <button>&#8595;</button> </p>
+      <h2>
+        Pretraga filmova
+      </h2>
 
-</section>
+      PRETRAŽI:
+      <input type="text" placeholder="Pretrazi film" id="search"> <br><br>
+      <p>POREDJAJ PO GODINI: <button>&#8593;</button> <button>&#8595;</button> </p><br>
+      <p>POREDJAJ PO NASLOVU: <button>&#8593;</button> <button>&#8595;</button> </p>
+
+    </section>
 
 
 
 
-<div id="filmovi"></div>
-
-    <script src="main.js"></script>
+    <div id="filmovi"></div>
+  </main>
+  <footer>  Kontakt: 011/111-222</footer>
+  <script src="main.js"></script>
 </body>
+
 </html>

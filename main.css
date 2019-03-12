@@ -29,10 +29,68 @@
   grid-column: 1 / span 3;
   grid-row: 3;
 }
-p {
-  color:blue
+p{
+  color: rgb(25, 27, 27);
+  font-size: 20px;
+
 }
 input {
  background-color:aliceblue
 }
+/* .movie {
+  display: flex;
+flex-wrap: wrap
+} */
+main {
+  grid-area: m;
+  padding: 10px;
+  background-image: url("images/filmslika2.jpg") ;
+  background-size: cover;
+  /* height: 100%; */
+  background-attachment: fixed;
+  
+}
+header {
+  background-color:burlywood;
+}
+footer {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
 
+header {
+  grid-area: h;
+}
+
+footer {
+  grid-area: f;
+}
+
+/* .container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 130px auto 50px;
+  grid-template-areas: 
+  "h h h h h h h h h h h h"
+  "m m m m m m m m m m m m"
+  "f f f f f f f f f f f f"
+} */
+h1{
+  color: rgb(158, 146, 115);
+  text-align: center;
+}
+button {
+  border-radius: 20px;
+  border: solid 1px goldenrod
+}
+h2 {
+  background-color: gold;
+  width: 180px;
+  border-radius: 20px;
+}
+header p {
+ text-align: center;
+}
