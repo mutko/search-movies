@@ -24,7 +24,7 @@
 
 
         <h1>Dodaj Film</h1>
-        <form class="dodaj_film" id="dodaj-film">
+        <form class="dodaj_film" id="dodaj-film" action="https://baza-filmova.herokuapp.com/dodaj-film/ " method="POST">
             <div class="unos">
                 <label for="naziv">
                     <h2>Ime filma:</h2>
@@ -37,7 +37,7 @@
                 <label for="slika_url">
                     <h2>Slika:</h2>
                 </label>
-                <input type="text" placeholder="image_url" name="slika_url" id="img-url">
+                <input type="text" placeholder="image_url" name="slika" id="img-url">
                 <button type="submit" id="master">Pronadji film</button>
             </div>
             <div class="slika"><img
@@ -48,11 +48,5 @@
     <footer> Kontakt: 011/111-222</footer>
 </body>
 
-<script>
-    let imgUrl = document.getElementById('img-url');
-    let imgPrev = document.querySelector('.img-prev');
-    imgUrl.addEventListener('input', function() {
-        imgPrev.setAttribute('src', imgUrl.value);
-    })
-</script>
+<script src="dodajfilm.js"></script>
 </html>
