@@ -37,14 +37,22 @@
                 <label for="slika_url">
                     <h2>Slika:</h2>
                 </label>
-                <input type="text" placeholder="image_url">
+                <input type="text" placeholder="image_url" id="img-url">
             </div>
             <div class="slika"><img
                     src="https://www.gettyimages.com/gi-resources/images/CreativeLandingPage/HP_Sept_24_2018/CR3_GettyImages-159018836.jpg"
-                    alt=""></div>
+                    alt="" class="img-prev"></div>
         </div>
     </main>
     <footer> Kontakt: 011/111-222</footer>
 </body>
 
+<script>
+    let imgUrl = document.getElementById('img-url');
+    let imgPrev = document.querySelector('.img-prev');
+
+    imgUrl.addEventListener('input', function() {
+        imgPrev.setAttribute('src', imgUrl.value);
+    })
+</script>
 </html>
