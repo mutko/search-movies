@@ -34,6 +34,16 @@
     <footer>  Kontakt: 011/111-222</footer>
 </div>
 
-</body>
 
+<script>
+    const ws = new WebSocket('ws://baza-filmova.herokuapp.com')
+    ws.addEventListener('message', e => {
+        console.log(e.data) // TODO: prikazati notifikaciju u headeru
+        let alertText = e.data;
+        document.body.insertAdjacentHTML('afterbegin', `<div class="alert">${alertText}</div>`);
+    })
+
+</script>
+
+</body>
 </html>
