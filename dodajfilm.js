@@ -6,7 +6,3 @@ let submit = document.getElementById('master');
 imgUrl.addEventListener('input', function() {
     imgPrev.setAttribute('src', imgUrl.value);
 })
-
-submit.addEventListener('click', function() {
-    
-})
