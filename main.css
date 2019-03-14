@@ -118,7 +118,7 @@ input {
 }
 .movie-img {
   width: 100px;
-  height: 150;
+  height: 150px;
 }
 /* div {
   background-color: dimgray;
@@ -138,4 +138,22 @@ input {
   margin: 0 auto;
   padding-top: 200px;
   
+}
+.dekor {
+  padding-top: 57px;
+  text-align: center;
+
+}
+.dekor h3 {
+  width: auto;
+}
+.alert {
+  background-color: crimson;
+}
+ img:hover{
+width: 300px;
+height: 400px;
+}
+footer {
+
 }
