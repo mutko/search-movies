@@ -75,11 +75,15 @@
         let slika;
         let idFilma = location.search.substring(5)
 
+        const omdbUrl = 'http://www.omdbapi.com/?t=Rocky&plot=full&apikey=2f0dbac0';
+        let omdb;
+        let plot;
+
         function showMovie(podatak) {
             godina = podatak.godina;
             naziv = podatak.naziv;
             slika = podatak.slika;
-            placeholder.innerHTML = `
+            placeholder.innerHTML += `
                 <div id="movie" class="movie">
                     <h3>${naziv} (${godina})</h3>
                     <img src=${slika} alt="Movie poster" class="movie-img">
@@ -90,24 +94,23 @@
         fetch(url+idFilma)
             .then(response => response.json())
             .then(response => {
-                console.log(response);
                 showMovie(response);
+
+                fetch(omdbUrl)
+                    .then( response => response.json() )
+                    .then( response => {
+                        omdb = response;
+                        console.log(omdb);
+
+                        plot = omdb.Plot;
+                        console.log(plot);
+
+                        placeholder.innerHTML += plot;
+                    })
             })
 
-        const omdbUrl = 'http://www.omdbapi.com/?t=Rocky&plot=full&apikey=2f0dbac0';
-        let omdb;
-        let plot;
-        const movieDiv = document.getElementById('movie');
 
-        fetch(omdbUrl)
-            .then( response => response.json() )
-            .then( response => {
-
-                omdb = response;
-                console.log(omdb);
-                plot = omdb.Plot;
-                console.log(plot);
-            })
+     
     </script>
 </body>
 </html>
