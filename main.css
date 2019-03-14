@@ -62,7 +62,7 @@ button {
   border-radius: 20px;
   border: solid 1px goldenrod;
   padding: 5px;
-  margin-left: 120px;
+  margin-left: 12px;
 }
 button:hover {
   border-radius: 20px;
@@ -79,6 +79,13 @@ header h2 {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  opacity: 0.8;
+  background-color: dimgray;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+   
+  
+
 }
 h3{
   width: 100px;
@@ -112,4 +119,23 @@ input {
 .movie-img {
   width: 100px;
   height: 150;
+}
+/* div {
+  background-color: dimgray;
+} */
+.img-prev {
+  width: 423px;
+  height: 423px;
+}
+#master {
+  margin-left: 120px; 
+}
+
+.prva #druga{
+  width: 450px;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 200px;
+  
 }
