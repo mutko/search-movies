@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    
+</head>
+<body>
+    <div id="film"></div>
+
+    <script>
+        const filmContainer = document.getElementById('film');
+        const url = "https://baza-filmova.herokuapp.com/pokazi-film/";
+
+        let placeholder = document.getElementById('film');
+        let patternForMovies = ``;
+        let godina;
+        let naziv;
+        let slika;
+        let idFilma = location.search.substring(5)
+
+        fetch(url+idFilma)
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+                let podatak = response;
+                    
+                godina = podatak.godina;
+                naziv = podatak.naziv;
+                slika = podatak.slika;
+
+                placeholder.innerHTML = `
+                    <div class="movie">
+                        <img src=${slika} alt="Movie poster" class="movie-img">
+                        <h3>${naziv}</h3>
+                        <p>${godina}</p>
+                    </div>
+                `;
+
+            })
+
+        
+    </script>
+</body>
+</html>

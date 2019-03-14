@@ -4,12 +4,14 @@ const url = 'https://baza-filmova.herokuapp.com/filmovi/';
 let searchField =id('search');
 let spaceForMovies =id('filmovi');
 let loader = id('loader');
+let brojFilmova = id('brojfilmova');
 
 const yearUp = id('sortYearUp');
 const yearDown = id('sortYearDown');
 const titleUp = id('sortTitleUp');
 const titleDown = id('sortTitleDown');
 
+let idFilma; 
 let godina;
 let naziv;
 let slika;
@@ -27,12 +29,15 @@ function showMovies(podatak) {
         godina = podatak[i].godina;
         naziv = podatak[i].naziv;
         slika = podatak[i].slika;
+        idFilma = podatak[i]._id;
 
         patternForMovies += `
             <div class="movie">
-                <img src=${slika} alt="Movie poster" class="movie-img">
-                <h3>${naziv}</h3>
-                <p>${godina}</p>
+                <a href="movie.html?_id=${idFilma}">
+                    <img src=${slika} alt="Movie poster" class="movie-img">
+                    <h3>${naziv}</h3>
+                    <p>${godina}</p>
+                </a>
             </div>
         `;
 
@@ -44,6 +49,7 @@ fetch(url)
     .then( response => response.json() )
     .then( response => {
         allMovies = response;
+        console.log(allMovies);
         showMovies(response);
     })
     
